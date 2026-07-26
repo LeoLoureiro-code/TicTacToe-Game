@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-space-component',
+  selector: 'space-component',
   imports: [],
   templateUrl: './space-component.html',
   styleUrl: './space-component.css',

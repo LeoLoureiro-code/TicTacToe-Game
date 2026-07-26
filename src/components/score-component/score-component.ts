@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-score-component',
+  selector: 'score-component',
   imports: [],
   templateUrl: './score-component.html',
   styleUrl: './score-component.css',
