@@ -1,11 +1,11 @@
 <main-page-component>
-  <div class="options_div">
+  <div class="options_div"></div>
 
-  </div>
   <board-component></board-component>
+
   <div class="scores_div">
+    @for (score of scores; track $index) {
     <score-component></score-component>
-    <score-component></score-component>
-    <score-component></score-component>
-  </div>
+  }
+</div>
 </main-page-component>
