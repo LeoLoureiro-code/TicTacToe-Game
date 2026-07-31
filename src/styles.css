@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --neutral950: #000000;
+    --neutral0: #FFFFFF;
+    --slate900: #1A2A33;
+    --slate850: #21313B;
+    --slate800: #1F3641;
+    --slate300: #A8BFC9;
+    --slate100: #DBE8ED;
+    --amber400: #F2B137;
+    --amber300: #FFC860;
+    --teal400: #31C3BD;
+    --teal300: #65E9E4;
+
+    --font-family: "Outfit", sans-serif;
+}
