@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './score-component.css',
 })
 export class ScoreComponent {
-
 }
