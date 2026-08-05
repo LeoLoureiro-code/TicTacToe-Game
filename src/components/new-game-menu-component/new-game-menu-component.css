@@ -1,7 +1,19 @@
+.new_game_div{
+    margin: 8rem 0;
+    padding: 0 1rem;
+}
+
 .figures_div{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.figures_div img {
+    width: 2rem;
+    height: 2rem;
 }
 
 .options_div{
@@ -10,6 +22,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    height: 13rem;
+}
+
+.options_paragraph, .rule_paragraph{
+    font-weight: 600;
+    color: var(--slate300);
+    margin: 1.5rem 0;
 }
 
 .options_choose{
@@ -18,4 +38,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 4.5rem;
 }
