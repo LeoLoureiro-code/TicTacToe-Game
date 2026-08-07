@@ -1,6 +1,8 @@
 .new_game_div{
+    max-width: 20.5rem;
     margin: 8rem 0;
     padding: 0 1rem;
+   
 }
 
 .figures_div{
@@ -39,17 +41,21 @@
     justify-content: space-between;
     align-items: center;
     height: 4.5rem;
+    border-radius: 10px;
+    padding: 1rem;
 }
 
 .option{
     width: 8.2rem;
+    height: 3.375rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .option_chosen{
-
+    background-color: var(--slate800);
+    border-radius: 10px;
 }
 
 .figure_image{
@@ -59,10 +65,20 @@
 
 
 .game_option_button{
-    height: 3.5rem;
+    height: 3rem;
     min-width: 20rem;
     margin-top: 1.5rem;
     border-radius: 20px;
     border: none;
     outline: none;
+}
+
+#CpuButton{
+    background-color: var(--amber300);
+    box-shadow: 0 10px 0 0 var(--amber400);
+}
+
+#PlayerButton{
+    background-color: var(--teal300);
+    box-shadow: 0 10px 0 0 var(--teal400);
 }
