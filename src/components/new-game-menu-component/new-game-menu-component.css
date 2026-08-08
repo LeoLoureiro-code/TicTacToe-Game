@@ -51,6 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .option_chosen{
@@ -71,6 +72,9 @@
     border-radius: 20px;
     border: none;
     outline: none;
+    font-weight: 700;
+    color: var(--slate900);
+    cursor: pointer;
 }
 
 #CpuButton{
