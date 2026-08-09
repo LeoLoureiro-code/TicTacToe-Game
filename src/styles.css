@@ -13,3 +13,11 @@
 
     --font-family: "Outfit", sans-serif;
 }
+
+body{
+    background-color: var(--slate900);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-family);
+}
