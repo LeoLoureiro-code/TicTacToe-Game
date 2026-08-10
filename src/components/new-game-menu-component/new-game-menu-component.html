@@ -6,10 +6,10 @@
     <div class="options_div">
         <p class="options_paragraph">PICK PLAYER 1’S MARK</p>
         <div class="options_choose">
-            <div class="option option_chosen">
+            <div class="option option_chosen" (click)="chooseOption($event)">
                 <img src="assets/icon-x.svg" alt="cross icon" class="figure_image">
             </div>
-            <div class="option">
+            <div class="option" (click)="chooseOption($event)">
                 <img src="assets/icon-o.svg" alt="circle icon" class="figure_image">
             </div>
         </div>
