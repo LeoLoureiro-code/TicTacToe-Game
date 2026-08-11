@@ -1,8 +1,9 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-new-game-menu-component',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './new-game-menu-component.html',
   styleUrl: './new-game-menu-component.css',
 })
