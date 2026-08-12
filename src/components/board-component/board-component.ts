@@ -8,5 +8,5 @@ import { SpaceComponent } from '../space-component/space-component';
   styleUrl: './board-component.css',
 })
 export class BoardComponent {
-  readonly spaces = Array.from({ length: 6 });
+  readonly spaces = Array.from({ length: 9 });
 }
