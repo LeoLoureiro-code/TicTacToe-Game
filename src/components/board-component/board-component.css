@@ -1,0 +1,8 @@
+.board-div{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
+    width: 20.5rem;
+    height: 20.5rem;
+}
