@@ -8,11 +8,11 @@ export const routes: Routes = [
         component: NewGameMenuComponent 
     },
     {
-        path: '**',
-        redirectTo: ''
-    },
-    {
         path:'game',
         component: GameComponent
+    },
+        {
+        path: '**',
+        redirectTo: ''
     },
 ];
