@@ -1,1 +1,9 @@
-<p>game-component works!</p>
+<turn-display-component></turn-display-component>
+
+  <board-component></board-component>
+
+  <div class="scores_div">
+    @for (score of scores; track $index) {
+    <score-component></score-component>
+  }
+</div>
