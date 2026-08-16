@@ -1,0 +1,44 @@
+.options_div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 2.5rem;
+    margin: 2rem 0 3rem 0;
+}
+
+.figures_div{
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 4rem;
+}
+
+.figure_img{
+    height: 100%;
+}
+
+.turn_div{
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    background-color: var(--slate800);
+    height: 2rem;
+    min-width: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 0 0 var(--neutral950);
+}
+
+.turn-paragraph{
+    font-weight: 700;
+    color: var(--slate300);
+}
+
+.reset_button{
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+.reset_button:hover{
+    cursor: pointer;
+}
