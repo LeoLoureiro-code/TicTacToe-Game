@@ -82,7 +82,27 @@
     box-shadow: 0 10px 0 0 var(--amber400);
 }
 
+#CpuButton:hover{
+    cursor: pointer;
+    
+}
+
+#CpuButton:active{
+    box-shadow: 0 2px 0 0 var(--amber400);
+}
+
 #PlayerButton{
     background-color: var(--teal300);
     box-shadow: 0 10px 0 0 var(--teal400);
+}
+
+
+#PlayerButton:hover{
+    cursor: pointer;
+    
+}
+
+#PlayerButton:active{
+    box-shadow: 0 2px 0 0 var(--teal400);
+    transform: translateY(-10px);
 }
