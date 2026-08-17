@@ -1,9 +1,24 @@
 <turn-display-component></turn-display-component>
 
-  <board-component></board-component>
+<board-component></board-component>
 
-  <div class="scores_div">
-    @for (score of scores; track $index) {
-    <score-component></score-component>
-  }
+<div class="scores_div">
+  <div class="score-div cross">
+    <p class="score-paragraph">
+      X
+      <span class="score_span">0</span>
+    </p>
+  </div>
+  <div class="score-div tie">
+    <p class="score-paragraph">
+      Tie
+      <span class="score_span">0</span>
+    </p>
+  </div>
+  <div class="score-div circle">
+    <p class="score-paragraph">
+      O
+      <span class="score_span">0</span>
+    </p>
+  </div>
 </div>
