@@ -1,0 +1,32 @@
+.scores_div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+}
+.score-div{
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+
+.score_span{
+    display: block;
+    text-align: center;
+    font-weight: 700;
+}
+
+.cross{
+    background-color: var(--teal400);
+}
+
+.tie{
+    background-color: var(--slate300);
+}
+
+.circle{
+    background-color: var(--amber400);
+}
