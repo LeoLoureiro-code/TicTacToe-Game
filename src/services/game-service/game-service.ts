@@ -17,6 +17,8 @@ export class GameService {
     result: null
   };
 
-  
+  AddFigure(){
+    console.log("click");
+  }
 
 }
