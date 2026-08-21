@@ -1,16 +1,13 @@
-:host{
+button{
     min-width: 5.5rem;
     min-height: 5.5rem;
     background-color: var(--slate800);
     border-radius: 10px;
     box-shadow: 0 4px 0 0 var(--neutral950);
-    transition: 0.5s ease-in-out;
+    border: none;
 }
 
-:host:hover{
-    cursor: pointer;
-}
 
-:host:active{
+button:active{
     box-shadow: 0 1px 0 0 var(--neutral950);
 }
