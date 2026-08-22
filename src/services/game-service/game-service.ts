@@ -5,6 +5,7 @@ import { GameInterface } from '../../interfaces/game-interface';
   providedIn: 'root',
 })
 export class GameService {
+
   
   gameState: GameInterface = {
     turn: 'X',
@@ -17,8 +18,13 @@ export class GameService {
     result: null
   };
 
+  ToogleTurn(){
+
+  }
+
+  //toogle turn
   AddFigure(){
-    console.log("click");
+   this.ToogleTurn();
   }
 
 }
