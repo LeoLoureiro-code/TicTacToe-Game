@@ -19,7 +19,20 @@ export class GameService {
   };
 
   ToogleTurn(){
+    let nextPlayer = ""
 
+    if(this.gameState.turn == 'X'){
+      nextPlayer = 'O';
+      this.gameState.turn = 'O';
+      console.log(nextPlayer);
+    }
+    else if(this.gameState.turn == 'O'){
+      this.gameState.turn = 'X';
+      nextPlayer = 'X'
+      console.log(nextPlayer);
+    }
+
+    return nextPlayer;
   }
 
   //toogle turn
