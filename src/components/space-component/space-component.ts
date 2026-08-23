@@ -16,6 +16,6 @@ export class SpaceComponent {
   }
 
   AddFigure(){
-    this.figure = this.gameService.AddFigure();
+    this.figure = this.gameService.ToogleTurn().toLocaleLowerCase();
   }
 }
