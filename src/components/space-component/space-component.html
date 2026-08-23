@@ -1,3 +1,6 @@
 <button (click)="AddFigure()">
-    {{figure}}
+    @if(figure){
+        <img src="assets/icon-{{figure}}.svg" alt="figure" class="figure_img">
+    }
+    
 </button>
