@@ -6,9 +6,11 @@ import { GameInterface } from '../../interfaces/game-interface';
 })
 export class GameService {
 
+  figureUrl:string = "assets/icon-";
+  turn:string = "X";
   
   gameState: GameInterface = {
-    turn: 'X',
+    turn: 'O',
     spaces: [
       ['', '', ''],
       ['', '', ''],
@@ -20,24 +22,40 @@ export class GameService {
 
   ToogleTurn(){
     let nextPlayer = ""
+    this.turn = this.gameState.turn;
 
     if(this.gameState.turn == 'X'){
       nextPlayer = 'O';
       this.gameState.turn = 'O';
-      console.log(nextPlayer);
     }
     else if(this.gameState.turn == 'O'){
       this.gameState.turn = 'X';
       nextPlayer = 'X'
-      console.log(nextPlayer);
     }
-
+   
     return nextPlayer;
   }
 
-  //toogle turn
+  ShowPlayerTurn(){
+    return this.gameState.turn;
+  }
+
   AddFigure(){
-   this.ToogleTurn();
+    let figure = this.ToogleTurn();
+    return this.figureUrl + figure + ".svg";
+  }
+
+  ResetGame() {
+    this.gameState = {
+      turn: 'X',
+      spaces: [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+      ],
+      isGameOver: false,
+      result: null
+    };
   }
 
 }
