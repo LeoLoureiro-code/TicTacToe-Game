@@ -40,9 +40,17 @@ export class GameService {
     return this.gameState.turn;
   }
 
-  AddFigure(){
-    let figure = this.ToogleTurn();
-    return this.figureUrl + figure + ".svg";
+  AddFigure(row:number, column:number){
+
+    if(this.gameState.spaces[row][column] !==''){
+      return
+    }
+
+    this.gameState.spaces[row][column] = this.gameState.turn;
+
+
+    this.gameState.turn =
+    this.gameState.turn === 'X' ? 'O' : 'X';
   }
 
   ResetGame() {
