@@ -1,6 +1,12 @@
-<button (click)="AddFigure()">
-    @if(figure){
-        <img src="assets/icon-{{figure}}.svg" alt="figure" class="figure_img">
+<div class="space_div">
+    <button (click)="AddFigure()">
+       @if (gameService.gameState.spaces[row][column] === 'X') {
+        <img src="assets/icon-x.svg" alt="X">
     }
-    
-</button>
+
+        @if (gameService.gameState.spaces[row][column] === 'O') {
+            <img src="assets/icon-o.svg" alt="O">
+        }
+    </button>
+
+</div>
