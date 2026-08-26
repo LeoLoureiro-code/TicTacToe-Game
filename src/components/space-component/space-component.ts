@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GameService } from '../../services/game-service/game-service';
 
 @Component({
@@ -9,13 +9,21 @@ import { GameService } from '../../services/game-service/game-service';
 })
 export class SpaceComponent {
 
-  figure:string = "";
+  isDisabled = false;
+  isGameOver = false;
+  @Input() row!: number;
+  @Input() column!: number;
+  @Input() index!: number;
+  @Input() figure: string = '';
 
-  constructor(private gameService:GameService){
+  constructor(public gameService:GameService){
 
   }
 
   AddFigure(){
-    this.figure = this.gameService.ToogleTurn().toLocaleLowerCase();
+     this.gameService.AddFigure(this.row, this.column);
   }
+
+
+
 }
