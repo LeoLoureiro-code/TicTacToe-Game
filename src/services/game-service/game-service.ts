@@ -8,6 +8,18 @@ export class GameService {
 
   figureUrl:string = "assets/icon-";
   turn:string = "X";
+  winningPlays = [
+    [[0, 0], [0, 1], [0, 2]], // first row
+    [[1, 0], [1, 1], [1, 2]], // second row
+    [[2, 0], [2, 1], [2, 2]], // third row
+
+    [[0, 0], [1, 0], [2, 0]], // first column
+    [[0, 1], [1, 1], [2, 1]], // second column
+    [[0, 2], [1, 2], [2, 2]], // third column
+
+    [[0, 0], [1, 1], [2, 2]], // diagonal 1
+    [[0, 2], [1, 1], [2, 0]]  // diagonal 2
+  ];
   
   gameState: GameInterface = {
     turn: 'O',
@@ -64,6 +76,28 @@ export class GameService {
       isGameOver: false,
       result: null
     };
+  }
+
+  CheckWinner(){
+    for (const play of this.winningPlays) {
+
+    const [a, b, c] = play;
+
+    const first = this.gameState.spaces[a[0]][a[1]];
+    const second = this.gameState.spaces[b[0]][b[1]];
+    const third = this.gameState.spaces[c[0]][c[1]];
+
+    if (
+      first !== '' &&
+      first === second &&
+      first === third
+    ) {
+      console.log('Winner:', first);
+      return first;
+    }
+  }
+
+  return null;
   }
 
 }
