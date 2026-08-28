@@ -22,6 +22,7 @@ export class SpaceComponent {
 
   AddFigure(){
      this.gameService.AddFigure(this.row, this.column);
+     this.gameService.CheckWinner();
   }
 
 
