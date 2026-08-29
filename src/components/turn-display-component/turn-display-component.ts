@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GameService } from '../../services/game-service/game-service';
 
 @Component({
   selector: 'turn-display-component',
@@ -7,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './turn-display-component.css',
 })
 export class TurnDisplayComponent {
+
+  constructor(private gameService:GameService){
+  }
+
+  get turn(): string {
+    return this.gameService.turn;
+  }
+  
+  ResetGame() {
+    this.gameService.ResetGame();
+  }
 
 }
