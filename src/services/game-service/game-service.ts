@@ -8,6 +8,9 @@ export class GameService {
 
   figureUrl:string = "assets/icon-";
   turn:string = "X";
+  crossWins: number = 0;
+  circleWins:number = 0;
+  drawGames:number = 0;
   winningPlays = [
     [[0, 0], [0, 1], [0, 2]], // first row
     [[1, 0], [1, 1], [1, 2]], // second row
@@ -23,6 +26,7 @@ export class GameService {
   
   gameState: GameInterface = {
     turn: 'O',
+    turnNumber: 0,
     spaces: [
       ['', '', ''],
       ['', '', ''],
@@ -58,16 +62,22 @@ export class GameService {
       return
     }
 
-    this.gameState.spaces[row][column] = this.gameState.turn;
+    if(this.gameState.turnNumber < 9){
+      this.gameState.spaces[row][column] = this.gameState.turn;
+
+      this.gameState.turn =
+      this.gameState.turn === 'X' ? 'O' : 'X';
+      this.gameState.turnNumber++
+    } 
 
 
-    this.gameState.turn =
-    this.gameState.turn === 'X' ? 'O' : 'X';
+
   }
 
   ResetGame() {
     this.gameState = {
       turn: 'X',
+      turnNumber: 0,
       spaces: [
         ['', '', ''],
         ['', '', ''],
@@ -80,7 +90,6 @@ export class GameService {
 
   CheckWinner(){
     for (const play of this.winningPlays) {
-
     const [a, b, c] = play;
 
     const first = this.gameState.spaces[a[0]][a[1]];
@@ -93,11 +102,24 @@ export class GameService {
       first === third
     ) {
       console.log('Winner:', first);
+      this.gameState.result = first;
       return first;
     }
+
   }
 
   return null;
+  }
+
+  FinishGame(){
+   
+  }
+
+  CheckDraw(){
+    if(this.gameState.turnNumber === 9){
+      this.gameState.isGameOver = true;
+      console.log('draw');
+    }
   }
 
 }
