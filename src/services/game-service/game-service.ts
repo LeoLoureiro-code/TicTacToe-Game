@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { GameInterface } from '../../interfaces/game-interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GameService {
+
 
   figureUrl:string = "assets/icon-";
   turn:string = "X";
@@ -25,7 +27,7 @@ export class GameService {
   ];
   
   gameState: GameInterface = {
-    turn: 'O',
+    turn: 'X',
     turnNumber: 0,
     spaces: [
       ['', '', ''],
@@ -33,8 +35,10 @@ export class GameService {
       ['', '', '']
     ],
     isGameOver: false,
-    result: null
+    result: null,
   };
+
+  constructor(private router: Router){}
 
   ToogleTurn(){
     let nextPlayer = ""
@@ -58,8 +62,12 @@ export class GameService {
 
   AddFigure(row:number, column:number){
 
+    if(this.gameState.isGameOver){
+      return;
+    }
+
     if(this.gameState.spaces[row][column] !==''){
-      return
+      return;
     }
 
     if(this.gameState.turnNumber < 9){
@@ -70,22 +78,9 @@ export class GameService {
       this.gameState.turnNumber++
     } 
 
+    this.CheckWinner();
+    this.CheckDraw();
 
-
-  }
-
-  ResetGame() {
-    this.gameState = {
-      turn: 'X',
-      turnNumber: 0,
-      spaces: [
-        ['', '', ''],
-        ['', '', ''],
-        ['', '', '']
-      ],
-      isGameOver: false,
-      result: null
-    };
   }
 
   CheckWinner(){
@@ -101,8 +96,17 @@ export class GameService {
       first === second &&
       first === third
     ) {
-      console.log('Winner:', first);
       this.gameState.result = first;
+      if(this.gameState.result === 'O'){
+        this.circleWins++;
+      }
+      if(this.gameState.result === 'X'){
+        this.crossWins++;
+      }
+      console.log(this.gameState.result);
+
+      this.FinishGame();
+
       return first;
     }
 
@@ -111,15 +115,52 @@ export class GameService {
   return null;
   }
 
-  FinishGame(){
-   
-  }
-
   CheckDraw(){
     if(this.gameState.turnNumber === 9){
-      this.gameState.isGameOver = true;
-      console.log('draw');
+      this.gameState.result = 'draw';
+      this.drawGames++;
+      this.FinishGame();
     }
+  }
+
+  FinishGame(){
+    this.gameState.isGameOver = true;
+  }
+
+
+  NextRound(){
+    this.gameState.isGameOver = false;
+    this.gameState.result = null;
+    this.gameState.spaces =
+    [
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', '']
+    ];
+    this.gameState.turnNumber = 0;
+    this.gameState.turn = 'X';
+  }
+
+    ResetGame() {
+    this.gameState = {
+      turn: 'X',
+      turnNumber: 0,
+      spaces: [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+      ],
+      isGameOver: false,
+      result: null
+    };
+    this.circleWins = 0;
+    this.crossWins = 0;
+    this.drawGames = 0;
+  }
+
+  QuitGame(){
+    this.ResetGame();
+    this.router.navigate(['/']);
   }
 
 }
