@@ -1,0 +1,29 @@
+<div class="modal_div">
+    <div class="modal_info_div">
+
+        @switch(winner){
+            @case('X'){
+                <p class="modal_message_paragraph">Player one won!</p>
+                <p class="modal_winner_paragraph cross">
+                    <img src="assets/icon-x.svg" alt="cross icon" class="modal_winner_img">
+                    TAKES THE ROUND
+                </p>
+            }
+            @case('O'){
+                <p class="modal_message_paragraph">Player two won!</p>
+                <p class="modal_winner_paragraph circle">
+                    <img src="assets/icon-o.svg" alt="cricle icon" class="modal_winner_img">
+                    TAKES THE ROUND
+                </p>
+            }
+            @case('draw'){
+                <p class="modal_winner_paragraph draw">ROUND TIED</p>
+            }
+        }
+        <div class="modal_buttons_div">
+            <button class="modal_quit_button" (click)="QuitGame()">QUIT</button>
+            <button class="modal_next_round_button" (click)="NextRound()">NEXT ROUND</button>
+        </div>
+       
+    </div>
+</div>

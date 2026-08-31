@@ -1,0 +1,86 @@
+.modal_div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.modal_info_div{
+    width: 100%;
+    height: 30%;
+    background-color: var(--slate850);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_message_paragraph{
+    color: var(--slate300);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.modal_winner_paragraph{
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.circle{
+    color: var(--amber400);
+}
+
+.cross{
+    color: var(--teal400);
+}
+
+.draw{
+    color: var(--slate300)
+}
+
+.modal_winner_img{
+    height: 3rem;
+}
+
+.modal_buttons_div{
+    display: flex;
+    gap: 1rem;
+}
+
+button{
+    height: 3rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 0 2rem;
+    font-weight: 700;
+    color: var(--neutral950);
+}
+
+.modal_quit_button{
+    background-color: var(--slate100);
+    box-shadow: 0 5px 0 0 var(--slate300);
+}
+
+.modal_next_round_button{
+    background-color: var(--amber300);
+    box-shadow: 0 5px 0 0 var(--amber400);
+}
+
+.modal_next_round_button:active{
+    box-shadow: 0 2px 0 0 var(--amber400);
+    transform: translateY(5px);
+}
+
+.modal_quit_button:active{
+    box-shadow: 0 2px 0 0 var(--slate300);
+    transform: translateY(5px);
+}
