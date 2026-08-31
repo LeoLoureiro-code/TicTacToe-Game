@@ -1,5 +1,8 @@
 <div class="board-div">
-    @for (space of spaces; track $index) {
-    <space-component></space-component>
-    }
+   @for (space of spaces; track $index) {
+  <space-component
+    [row]="space.row"
+    [column]="space.column">
+  </space-component>
+}
 </div>
