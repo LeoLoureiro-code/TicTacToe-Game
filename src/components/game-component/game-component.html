@@ -1,3 +1,6 @@
+@if(isGameOver){
+  <winner-modal-component></winner-modal-component>
+}
 <turn-display-component></turn-display-component>
 
 <board-component></board-component>
@@ -6,19 +9,19 @@
   <div class="score-div cross">
     <p class="score-paragraph">
       X
-      <span class="score_span">0</span>
+      <span class="score_span">{{crossWins}}</span>
     </p>
   </div>
   <div class="score-div tie">
     <p class="score-paragraph">
       Tie
-      <span class="score_span">0</span>
+      <span class="score_span">{{drawGames}}</span>
     </p>
   </div>
   <div class="score-div circle">
     <p class="score-paragraph">
       O
-      <span class="score_span">0</span>
+      <span class="score_span">{{circleWins}}</span>
     </p>
   </div>
 </div>
