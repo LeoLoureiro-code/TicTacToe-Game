@@ -13,11 +13,11 @@ export class TurnDisplayComponent {
   }
 
   get turn(): string {
-    return this.gameService.turn;
+    return this.gameService.gameState.turn;
   }
   
-  ResetGame() {
-    this.gameService.ResetGame();
+  QuitGame() {
+    this.gameService.QuitGame();
   }
 
 }
