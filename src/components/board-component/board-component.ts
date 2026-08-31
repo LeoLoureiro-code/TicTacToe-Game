@@ -8,5 +8,20 @@ import { SpaceComponent } from '../space-component/space-component';
   styleUrl: './board-component.css',
 })
 export class BoardComponent {
-  readonly spaces = Array.from({ length: 9 });
+
+   constructor() {
+  
+  }
+
+  spaces = [
+  { row: 0, column: 0 },
+  { row: 0, column: 1 },
+  { row: 0, column: 2 },
+  { row: 1, column: 0 },
+  { row: 1, column: 1 },
+  { row: 1, column: 2 },
+  { row: 2, column: 0 },
+  { row: 2, column: 1 },
+  { row: 2, column: 2 }
+];
 }
