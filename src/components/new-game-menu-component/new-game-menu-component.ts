@@ -1,5 +1,6 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { GameService } from '../../services/game-service/game-service';
 
 @Component({
   selector: 'app-new-game-menu-component',
@@ -9,19 +10,22 @@ import { RouterLink } from '@angular/router';
 })
 export class NewGameMenuComponent {
 
-     @ViewChildren('option') options!: QueryList<ElementRef>;
+  constructor(private gameService: GameService){
 
-    chooseOption(event: Event) {
+  }
 
-    const selected = event.currentTarget as HTMLElement;
+  StartVsPlayer() {
+    this.gameService.gameMode = 'player';
+  }
 
-    const options = document.querySelectorAll('.option');
+  StartVsCpu() {
+    this.gameService.gameMode = 'cpu';
+  }
 
-    options.forEach(option => {
-        option.classList.remove('option_chosen');
-    });
-
-    selected.classList.add('option_chosen');
 }
-//Output options to game component (vs cpu or vs player, and which figure has player 1)
-}
+
+
+
+
+
+
