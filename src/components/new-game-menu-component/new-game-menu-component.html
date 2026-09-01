@@ -6,10 +6,10 @@
     <div class="options_div">
         <p class="options_paragraph">PICK PLAYER 1’S MARK</p>
         <div class="options_choose">
-            <div class="option option_chosen" (click)="chooseOption($event)">
+            <div class="option option_chosen">
                 <img src="assets/icon-x.svg" alt="cross icon" class="figure_image">
             </div>
-            <div class="option" (click)="chooseOption($event)">
+            <div class="option">
                 <img src="assets/icon-o.svg" alt="circle icon" class="figure_image">
             </div>
         </div>
@@ -19,13 +19,17 @@
         <button 
             id="CpuButton" 
             class="game_option_button" 
-            routerLink="/game">
+            routerLink="/game"
+            (click)="StartVsCpu()">
+            >
             NEW GAME (VS CPU)
         </button>
         <button 
             id="PlayerButton" 
             class="game_option_button" 
-            routerLink="/game">
+            routerLink="/game"
+            (click)="StartVsPlayer()">
+            >
             NEW GAME  (VS PLAYER)
         </button>
     </div>
