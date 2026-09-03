@@ -10,6 +10,7 @@ export class GameService {
 
   figureUrl:string = "assets/icon-";
   turn:string = "X";
+  gameMode: 'player' | 'cpu' = 'player';
   crossWins: number = 0;
   circleWins:number = 0;
   drawGames:number = 0;
@@ -39,6 +40,8 @@ export class GameService {
   };
 
   constructor(private router: Router){}
+
+  
 
   ToogleTurn(){
     let nextPlayer = ""
@@ -82,6 +85,19 @@ export class GameService {
     this.CheckDraw();
 
   }
+
+  PlayerMove(row: number, column: number) {
+    this.AddFigure(row, column);
+
+    if (this.gameMode === 'cpu' && !this.gameState.isGameOver) {
+        // this.CpuMove();
+    }
+}
+
+  // CpuMove() {
+
+  //     this.AddFigure(row, column);
+  // }
 
   CheckWinner(){
     for (const play of this.winningPlays) {
