@@ -15,6 +15,17 @@ export class GameComponent {
 
   constructor(private gameService:GameService){}
 
+  StartGame(){
+    if(this.gameService.gameMode === 'cpu')
+    {
+      console.log("playing versus cpu")
+    }
+    else(this.gameService.gameMode === 'player')
+    {
+      console.log("playing versus player")
+    }
+  }
+
   get isGameOver(): boolean{
     return this.gameService.gameState.isGameOver;
   }
