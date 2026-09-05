@@ -89,6 +89,7 @@
 
 #CpuButton:active{
     box-shadow: 0 2px 0 0 var(--amber400);
+    transform: translateY(5px);
 }
 
 #PlayerButton{
@@ -104,5 +105,5 @@
 
 #PlayerButton:active{
     box-shadow: 0 2px 0 0 var(--teal400);
-    transform: translateY(-10px);
+    transform: translateY(5px);
 }
