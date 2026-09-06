@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GameInterface } from '../../interfaces/game-interface';
 import { Router } from '@angular/router';
+import { CPUService } from '../CPU-service/cpu-service';
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +30,7 @@ export class GameService {
   
   gameState: GameInterface = {
     turn: 'X',
+    playerMark: 'X',
     turnNumber: 0,
     spaces: [
       ['', '', ''],
@@ -42,6 +44,52 @@ export class GameService {
   constructor(private router: Router){}
 
   
+  StartGame(){
+
+    this.ResetGame();
+
+    if(this.gameMode === 'cpu')
+    {
+  
+    }
+    else(this.gameMode === 'player')
+    {
+      console.log("playing versus player")
+    }
+  }
+
+  StartVsPlayer() {
+    this.gameMode = 'player';
+  }
+
+  StartVsCpu() {
+    this.gameMode = 'cpu';
+  }
+
+  GetAvailableSpaces(){
+
+  const availableSpaces = [];
+
+  for (let row = 0; row < 3; row++) {
+  for (let column = 0; column < 3; column++) {
+
+    if (this.gameState.spaces[row][column] === '') {
+      availableSpaces.push([row, column]);
+    }
+    
+  }
+}
+  return availableSpaces;
+}
+
+
+GetRandomMove(availableSpaces:any){
+    const randomSpace =
+    availableSpaces[Math.floor(Math.random() * availableSpaces.length)];
+
+    this.AddFigure(randomSpace[0], randomSpace[1]);
+}
+
 
   ToogleTurn(){
     let nextPlayer = ""
@@ -160,6 +208,7 @@ export class GameService {
     ResetGame() {
     this.gameState = {
       turn: 'X',
+      playerMark: 'X',
       turnNumber: 0,
       spaces: [
         ['', '', ''],
