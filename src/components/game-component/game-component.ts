@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BoardComponent } from "../board-component/board-component";
 import { TurnDisplayComponent } from "../turn-display-component/turn-display-component";
 import { GameService } from '../../services/game-service/game-service';
@@ -10,20 +10,17 @@ import { WinnerModalComponent } from '../winner-modal-component/winner-modal-com
   templateUrl: './game-component.html',
   styleUrl: './game-component.css',
 })
-export class GameComponent {
+export class GameComponent implements OnInit{
 
 
   constructor(private gameService:GameService){}
 
+  ngOnInit(): void {
+    this.StartGame();
+  }
+
   StartGame(){
-    if(this.gameService.gameMode === 'cpu')
-    {
-      console.log("playing versus cpu")
-    }
-    else(this.gameService.gameMode === 'player')
-    {
-      console.log("playing versus player")
-    }
+    this.gameService.StartGame()
   }
 
   get isGameOver(): boolean{
