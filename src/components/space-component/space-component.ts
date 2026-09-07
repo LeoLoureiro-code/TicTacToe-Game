@@ -20,7 +20,7 @@ export class SpaceComponent {
   constructor(public gameService:GameService){
   }
 
-  AddFigure(){
-      this.gameService.AddFigure(this.row, this.column);
+  PlayerMove(){
+      this.gameService.PlayerMove(this.row, this.column);
   }
 }
