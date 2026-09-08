@@ -1,4 +1,4 @@
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, QueryList, viewChildren, ViewChildren } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { GameService } from '../../services/game-service/game-service';
 
@@ -10,16 +10,26 @@ import { GameService } from '../../services/game-service/game-service';
 })
 export class NewGameMenuComponent {
 
+  @ViewChildren('option') optionButton!: ElementRef<HTMLButtonElement>
+
   constructor(private gameService: GameService){
 
   }
 
+  
+
   StartVsPlayer() {
     this.gameService.gameMode = 'player';
+    console.log(this.gameService.gameMode);
   }
 
   StartVsCpu() {
     this.gameService.gameMode = 'cpu';
+     console.log(this.gameService.gameMode);
+  }
+
+  ChoseMark(){
+    
   }
 
 }
