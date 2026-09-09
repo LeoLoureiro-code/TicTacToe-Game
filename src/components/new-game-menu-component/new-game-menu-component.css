@@ -55,11 +55,13 @@
     cursor: pointer;
     border: none;
     outline: none;
+    border-radius: 10px;
+    background-color: var(--slate800);
 }
 
 .option_chosen{
-    background-color: var(--slate800);
     border-radius: 10px;
+    background-color: var(--neutral0);
 }
 
 .figure_image{

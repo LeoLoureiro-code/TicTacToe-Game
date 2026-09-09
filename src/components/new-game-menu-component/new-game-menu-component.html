@@ -6,10 +6,20 @@
     <div class="options_div">
         <p class="options_paragraph">PICK PLAYER 1’S MARK</p>
         <div class="options_choose">
-            <button id = "buttonX" class="option option_chosen" data-mark="X">
+            <button id = "buttonX" 
+            class="option" 
+            data-mark="X" 
+            (click)="ChoseMark('X')"
+            [class.option_chosen]="selectedMark === 'X'"
+            >
                 <img src="assets/icon-x.svg" alt="cross icon" class="figure_image">
             </button>
-            <button id="buttonY" class="option" data-mark="O">
+            <button id="buttonY" 
+            class="option" 
+            data-mark="O"
+            (click)="ChoseMark('O')"
+            [class.option_chosen]="selectedMark === 'O'"
+            >
                 <img src="assets/icon-o.svg" alt="circle icon" class="figure_image">
             </button>
         </div>

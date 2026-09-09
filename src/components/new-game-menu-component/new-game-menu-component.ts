@@ -10,13 +10,11 @@ import { GameService } from '../../services/game-service/game-service';
 })
 export class NewGameMenuComponent {
 
-  @ViewChildren('option') optionButton!: ElementRef<HTMLButtonElement>
+  selectedMark: 'X' | 'O' = 'X';
 
   constructor(private gameService: GameService){
 
   }
-
-  
 
   StartVsPlayer() {
     this.gameService.gameMode = 'player';
@@ -28,8 +26,8 @@ export class NewGameMenuComponent {
      console.log(this.gameService.gameMode);
   }
 
-  ChoseMark(){
-    
+  ChoseMark(mark: 'X' | 'O'){
+    this.selectedMark = mark;
   }
 
 }
