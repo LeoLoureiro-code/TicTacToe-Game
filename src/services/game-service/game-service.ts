@@ -43,19 +43,27 @@ export class GameService {
 
   constructor(private router: Router) {
 
-   }
+  }
 
   /*Initiate game options*/
   StartGame() {
 
     this.ResetGame();
 
-      if (this.gameMode === 'cpu' && this.gameState.turn !== this.gameState.playerMark) {
+    console.log('gameMode:', this.gameMode);
+    console.log('turn:', this.gameState.turn);
+    console.log('playerMark:', this.gameState.playerMark);
+    console.log(
+    '¿Son diferentes?',
+    this.gameState.turn !== this.gameState.playerMark
+  );
+
+    if (this.gameMode === 'cpu' && this.gameState.turn !== this.gameState.playerMark) {
+      console.log('ENTRÓ AL IF');
       this.GetRandomMove(this.GetAvailableSpaces());
       console.log(this.gameState.spaces);
-      this.ToogleTurn();
     }
-    
+
   }
 
   StartVsPlayer() {
@@ -86,10 +94,10 @@ export class GameService {
   }
 
 
-GetRandomMove(availableSpaces: number[][]) { 
-  const randomSpace = availableSpaces[Math.floor(Math.random() * availableSpaces.length)]; 
-  this.AddFigure(randomSpace[0], randomSpace[1]); 
-}
+  GetRandomMove(availableSpaces: number[][]) {
+    const randomSpace = availableSpaces[Math.floor(Math.random() * availableSpaces.length)];
+    this.AddFigure(randomSpace[0], randomSpace[1]);
+  }
 
 
   ToogleTurn() {
@@ -203,9 +211,12 @@ GetRandomMove(availableSpaces: number[][]) {
   }
 
   ResetGame() {
+
+    const playerMark = this.gameState.playerMark;
+
     this.gameState = {
       turn: 'X',
-      playerMark: 'X',
+      playerMark: playerMark,
       turnNumber: 0,
       spaces: [
         ['', '', ''],
