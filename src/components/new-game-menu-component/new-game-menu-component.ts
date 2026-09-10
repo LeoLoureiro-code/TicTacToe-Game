@@ -10,7 +10,7 @@ import { GameService } from '../../services/game-service/game-service';
 })
 export class NewGameMenuComponent {
 
-  selectedMark: 'X' | 'O' = 'X';
+  selectedMark: 'X' | 'O' | '' = '';
 
   constructor(private gameService: GameService){
 
@@ -26,13 +26,19 @@ export class NewGameMenuComponent {
      console.log(this.gameService.gameMode);
   }
 
-  ChoseMark(mark: 'X' | 'O'){
-    this.selectedMark = mark;
+  ChoseMark(event: Event){
+    const button = event.currentTarget as HTMLButtonElement;
+    const mark = button.dataset['mark'];
+
+    if (mark === 'X' || mark === 'O') {
+      this.selectedMark = mark;
+      this.gameService.gameState.playerMark = mark;
   }
 
+  console.log(this.gameService.gameState.playerMark);
+  console.log(this,this.gameService.gameState.turn);
 }
-
-
+}
 
 
 
