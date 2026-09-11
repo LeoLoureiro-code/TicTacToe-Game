@@ -30,7 +30,7 @@ export class GameService {
 
   gameState: GameInterface = {
     turn: 'X',
-    playerMark: 'X',
+    playerMark: '',
     turnNumber: 0,
     spaces: [
       ['', '', ''],
@@ -50,18 +50,8 @@ export class GameService {
 
     this.ResetGame();
 
-    console.log('gameMode:', this.gameMode);
-    console.log('turn:', this.gameState.turn);
-    console.log('playerMark:', this.gameState.playerMark);
-    console.log(
-    '¿Son diferentes?',
-    this.gameState.turn !== this.gameState.playerMark
-  );
-
     if (this.gameMode === 'cpu' && this.gameState.turn !== this.gameState.playerMark) {
-      console.log('ENTRÓ AL IF');
       this.GetRandomMove(this.GetAvailableSpaces());
-      console.log(this.gameState.spaces);
     }
 
   }
@@ -172,7 +162,6 @@ export class GameService {
         if (this.gameState.result === 'X') {
           this.crossWins++;
         }
-        console.log(this.gameState.result);
 
         this.FinishGame();
 
@@ -197,7 +186,9 @@ export class GameService {
   }
 
 
+
   NextRound() {
+
     this.gameState.isGameOver = false;
     this.gameState.result = null;
     this.gameState.spaces =
@@ -208,6 +199,10 @@ export class GameService {
       ];
     this.gameState.turnNumber = 0;
     this.gameState.turn = 'X';
+
+    if (this.gameMode === 'cpu' && this.gameState.turn !== this.gameState.playerMark) {
+      this.GetRandomMove(this.GetAvailableSpaces());
+    }
   }
 
   ResetGame() {
