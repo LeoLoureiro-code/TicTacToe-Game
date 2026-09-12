@@ -1,3 +1,8 @@
+.container{
+    width: clamp(375px, 15vw, 461px);
+}
+
+
 .scores_div{
     display: flex;
     justify-content: space-around;
