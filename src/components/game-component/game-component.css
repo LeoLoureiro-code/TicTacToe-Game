@@ -1,5 +1,5 @@
 .container{
-    width: clamp(375px, 15vw, 461px);
+
 }
 
 
@@ -35,4 +35,15 @@
 
 .circle{
     background-color: var(--amber400);
+}
+
+@media (min-width: 764px){
+    .score-div{
+        width: 8.75rem;
+        height: 4.5rem;
+    }
+
+    .score-paragraph{
+        font-size: 1.2rem;
+    }
 }

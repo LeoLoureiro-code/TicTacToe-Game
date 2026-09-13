@@ -1,6 +1,7 @@
+
 button{
-    min-width: 5.5rem;
-    min-height: 5.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
     background-color: var(--slate800);
     border-radius: 10px;
     box-shadow: 0 4px 0 0 var(--neutral950);
@@ -10,4 +11,12 @@ button{
 
 button:active{
     box-shadow: 0 1px 0 0 var(--neutral950);
+}
+
+@media (min-width: 764px){
+    
+    button{
+        width: 8.75rem;
+        height: 8.75rem;
+    }
 }

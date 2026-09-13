@@ -35,8 +35,6 @@ export class NewGameMenuComponent {
       this.gameService.gameState.playerMark = mark;
   }
 
-  console.log(this.gameService.gameState.playerMark);
-  console.log(this,this.gameService.gameState.turn);
 }
 }
 

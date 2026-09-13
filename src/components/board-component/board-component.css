@@ -2,7 +2,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
     gap: 0.5rem;
     width: 20.5rem;
-    height: 20.5rem;
+}
+
+@media screen and (min-width: 764px) {
+    .board-div{
+        gap: 1rem;
+        width: 28.8rem;
+    }
+    
 }

@@ -1,12 +1,9 @@
-<div class="space_div">
-    <button (click)="PlayerMove()">
-       @if (gameService.gameState.spaces[row][column] === 'X') {
-        <img src="assets/icon-x.svg" alt="X">
+<button (click)="PlayerMove()">
+    @if (gameService.gameState.spaces[row][column] === 'X') {
+    <img src="assets/icon-x.svg" alt="X">
     }
 
-        @if (gameService.gameState.spaces[row][column] === 'O') {
-            <img src="assets/icon-o.svg" alt="O">
-        }
-    </button>
-
-</div>
+    @if (gameService.gameState.spaces[row][column] === 'O') {
+    <img src="assets/icon-o.svg" alt="O">
+    }
+</button>
