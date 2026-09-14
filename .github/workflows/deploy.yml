@@ -30,15 +30,10 @@ jobs:
       - name: Build Angular
         run: npm run build -- --base-href /TicTacToe-Game/
 
-        - name: Check build output
-        run: |
-        echo "=== DIST ==="
-        find dist -maxdepth 4 -type f
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-        path: ./dist/TicTacToeGame
+          path: ./dist/TicTacToeGame
 
   deploy:
     environment:
