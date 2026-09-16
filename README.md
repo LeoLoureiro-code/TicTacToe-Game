@@ -13,7 +13,10 @@ TicTacToe game made in Angular 20 to practice more about components, services, s
 
 ### Screenshots
 
-![App Screenshot](./assets/screenshots/menu.png)
+![App Screenshot](./src/assets/screenshots/menu.png)
+![App Screenshot](./src/assets/screenshots/play.png)
+![App Screenshot](./src/assets/screenshots/play-mobile.png)
+![App Screenshot](./src/assets/screenshots/win.png)
 
 ### Links
 
