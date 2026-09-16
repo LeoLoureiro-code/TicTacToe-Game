@@ -11,12 +11,23 @@ TicTacToe game made in Angular 20 to practice more about components, services, s
 - See score between cross, circle or draw game
 
 
-### Screenshots
+## Screenshots
 
-![App Screenshot](./src/assets/screenshots/menu.png)
-![App Screenshot](./src/assets/screenshots/play.png)
-![App Screenshot](./src/assets/screenshots/play-mobile.png)
-![App Screenshot](./src/assets/screenshots/win.png)
+### Menu
+
+![App Screenshot](./public/assets/screenshots/menu.png)
+
+### Board Desktop
+
+![App Screenshot](./public/assets/screenshots/play.png)
+
+### Board Mobile
+
+![App Screenshot](./public/assets/screenshots/play-mobile.png)
+
+### Win screen
+
+![App Screenshot](./public/assets/screenshots/win.png)
 
 ### Links
 
